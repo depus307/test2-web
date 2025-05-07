@@ -6,7 +6,8 @@ import { cookies } from "next/headers";
 
 export async function GET() {
   try {
-    const token = cookies().get("token")?.value;
+    const cookieStore = cookies();
+    const token = cookieStore.get("token")?.value;
 
     if (!token) {
       return NextResponse.json(

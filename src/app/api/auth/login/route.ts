@@ -46,7 +46,8 @@ export async function POST(req: Request) {
     });
 
     // Set cookie
-    cookies().set({
+    const cookieStore = cookies();
+    cookieStore.set({
       name: "token",
       value: token,
       httpOnly: true,
